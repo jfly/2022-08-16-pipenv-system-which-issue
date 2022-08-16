@@ -6,6 +6,9 @@ https://github.com/pypa/pipenv/commit/f276360dfcef3200908e2c6569567d617919c63d
 --system` on a machine with a python3 binary but not a python binary (as is
 common with many package managers, including Ubuntu's).
 
+I've filed this issue upstream: https://github.com/pypa/pipenv/issues/5261
+And this PR to fix it: https://github.com/pypa/pipenv/pull/5262
+
 ## Demonstration of the bug
 
     $ docker run $(docker build -q -f Dockerfile.pipenv-2022.8.15 https://github.com/jfly/2022-08-16-pipenv-system-which-issue.git#main)
