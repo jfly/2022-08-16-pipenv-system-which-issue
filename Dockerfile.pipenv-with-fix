@@ -1,0 +1,10 @@
+FROM ubuntu:22.04
+
+RUN apt-get update && apt-get install -y python3 python3-pip git
+
+RUN pip3 install -U git+https://github.com/jfly/pipenv.git@jfly/fix-which-system-issue 
+
+COPY Pipfile .
+COPY Pipfile.lock .
+
+ENTRYPOINT ["pipenv", "install", "--system", "--deploy"]
