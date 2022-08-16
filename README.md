@@ -9,9 +9,12 @@ common with many package managers, including Ubuntu's).
 ## Demonstration of the bug
 
     $ docker run $(docker build -q -f Dockerfile.pipenv-2022.8.15 https://github.com/jfly/2022-08-16-pipenv-system-which-issue.git#main)
-    ...
+    Installing dependencies from Pipfile.lock (63bec0)...
+    The Python interpreter can't be found.▉ 0/4 — 00:00:00
+      🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 0/4 — 00:00:00
 
 ## Demonstration of the fix
 
     $ docker run $(docker build -q -f Dockerfile.pipenv-with-fix https://github.com/jfly/2022-08-16-pipenv-system-which-issue.git#main)
-    ...
+    Installing dependencies from Pipfile.lock (63bec0)...
+      🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 4/4 — 00:00:00
